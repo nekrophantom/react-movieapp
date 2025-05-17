@@ -6,17 +6,17 @@ const Movie = ({ id, images, prevId, nextId }) => {
     <div id={id} className="carousel-item relative w-full">
       <div className="flex justify-center gap-4 overflow-x-auto whitespace-nowrap px-4">
         {
-          images.map((src, idx) => (
+          images.map((movie, idx) => (
             <div key={idx} className="relative group min-w-[50%] sm:min-w-[150px]">
               <img
-                src={src}
+                src={movie.image}
                 alt={`Movie ${idx + 1}`}
                 className="w-full h-auto object-cover rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
               />
 
               <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg flex justify-center items-center flex-col">
                 <div className="text-center text-white p-4">
-                  <h3 className="font-bold text-lg mb-3">Movie Title</h3>
+                  <h3 className="font-bold text-lg mb-3">{ movie.title }</h3>
                   <div className="flex justify-center space-x-4">
                     <button className="bg-white text-black p-3 rounded-full hover:bg-opacity-70">
                       <FaPlay className="text-xl text-green-600" />

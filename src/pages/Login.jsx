@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
 const Login = () => {
+  const [ username, setUsername ] = useState("");
+  const [ password, setPassword ] = useState("");
+
   return (
     <section>
       <div className="hero min-h-screen" style={{ backgroundImage: 'url(/assets/img/BG.jpg)' }}>
@@ -19,10 +22,10 @@ const Login = () => {
                 </h1>
                 <p>Selamat datang kembali!</p>
                 
-                <Input label="Username" type='text' placeholder='Masukkan username' />
-                <Input label="Kata Sandi" type='password' placeholder='Masukkan kata sandi'>
+                <Input label="Username" type='text' placeholder='Masukkan username' value={username} onChange={(e) => setUsername(e.target.value)} />
+                <Input label="Kata Sandi" type='password' placeholder='Masukkan kata sandi' value={password} onChange={(e) => setPassword(e.target.value)}>
                   <div className="flex justify-between">
-                    <p className="fieldset-label">Belum punya akun? <a href=""><b>Masuk</b></a></p>
+                    <p className="fieldset-label">Belum punya akun? <a href="/register"><b>Register</b></a></p>
                     <p className="fieldset-label ml-auto"><a href="">Lupa kata sandi?</a></p>
                   </div>
                 </Input>

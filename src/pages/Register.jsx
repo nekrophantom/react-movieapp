@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../components/Button'
 import Input from '../components/Input'
 
 const Register = () => {
+  const [ username, setUsername ]               = useState("");
+  const [ password, setPassword ]               = useState("");
+  const [ confirmPassword, setConfirmPassword ] = useState("");
+
   return (
     <section>
       <div className="hero min-h-screen" style={{ backgroundImage: 'url(/assets/img/BG_REGISTER.jpg)' }}>
@@ -19,10 +23,10 @@ const Register = () => {
                 </h1>
                 <p>Selamat Datang!</p>
                 
-                <Input label="Username" type='text' placeholder='Masukkan username' />
-                <Input label="Kata Sandi" type='password' placeholder='Masukkan kata sandi' />
-                <Input label="Konfirmasi Kata Sandi" type='password' placeholder='Masukkan kata sandi' >
-                  <p className="fieldset-label">Sudah punya akun? <a href=""><b>Masuk</b></a></p>
+                <Input label="Username" type='text' placeholder='Masukkan username' value={username} onChange={(e) => setUsername(e.target.value)}/>
+                <Input label="Kata Sandi" type='password' placeholder='Masukkan kata sandi' value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <Input label="Konfirmasi Kata Sandi" type='password' placeholder='Masukkan kata sandi' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}>
+                  <p className="fieldset-label">Sudah punya akun? <a href="/login"><b>Masuk</b></a></p>
                 </Input>
 
                 <Button className="bg-base-500">
