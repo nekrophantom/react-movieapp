@@ -28,6 +28,8 @@ const movieSlice = createSlice({
     movies: [],
     loading: false,
     error: null,
+    
+
   },
   reducers: {},
   extraReducers: (builder) => {
